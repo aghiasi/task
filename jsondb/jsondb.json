@@ -1,0 +1,89 @@
+{
+  "accounting": [
+    {
+      "id": "1",
+      "code": 1234,
+      "name": "کارت خوان",
+      "color": "#FFF8F0",
+      "list": [
+        {
+          "id": 1,
+          "code": 457,
+          "title": "عنوان فرضی",
+          "bank": "عنوان حساب",
+          "terminal": 43612345,
+          "forex": "ریال",
+          "activ": true
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "code": 134,
+      "name": "صندوق",
+      "color": "#9DD9D2",
+      "list": [
+        {
+          "id": 1,
+          "code": 457,
+          "title": "عنوان فرضی",
+          "bank": "عنوان حساب",
+          "terminal": 6243523452,
+          "forex": "ریال",
+          "activ": true
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "code": 435,
+      "name": "حساب بانکی",
+      "color": "#FF8811",
+      "list": [
+        {
+          "id": 1,
+          "code": 457,
+          "title": "عنوان فرضی",
+          "bank": "عنوان حساب",
+          "terminal": 123564562,
+          "forex": "ریال",
+          "activ": true
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "code": 64324,
+      "name": "مرکز هزینه",
+      "color": "#A1FCDF",
+      "list": [
+        {
+          "id": 1,
+          "title": "عنوان فرضی",
+          "code": 457,
+          "bank": "عنوان حساب",
+          "terminal": 1235656221,
+          "forex": "ریال",
+          "activ": true
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "code": 7346,
+      "name": "طرف مقابل",
+      "color": "#FCD29F",
+      "list": [
+        {
+          "id": "1",
+          "title": "عنوان فرضی",
+          "code": 457,
+          "bank": "عنوان حساب",
+          "terminal": 123564562,
+          "forex": "ریال",
+          "activ": true
+        }
+      ]
+    }
+  ]
+}
