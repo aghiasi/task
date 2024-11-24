@@ -1,8 +1,20 @@
-import React, { useEffect } from 'react';
-import {Paper,Table,TableHead,TableCell,TableRow,TableBody,Container,Grid,Typography,Button,Toolbar,Checkbox} from '@mui/material'
+import React, { useEffect, useState } from 'react';
+import {Paper,Table,TableHead,TableCell,TableRow,TableBody,Container,Box,Grid,Typography,Button,Toolbar,Checkbox
+  ,Dialog
+  ,DialogTitle
+  ,Divider
+  ,DialogContent
+  ,TextField
+  ,DialogActions
+} from '@mui/material'
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
   function ListTable({prop,titles,color}) {
+    const [listId ,setListId]= useState('')
+    const [open,setOpen] = useState(false)
+    const handleClose =()=>{
+      setOpen(false)
+    }
     useEffect(()=>{
         prop.map(i=>{
     
@@ -22,12 +34,25 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
                     }}
       
       >
-        <Grid container width={4/4} columnSpacing={200}
-
-        >
-            <Typography variant="h6" id="tableTitle">
+        
+          <Box width={4/4}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-evenly',
+                  borderRadius: 1,
+                }}
+          >
+            <Typography sx={{
+              width:3/4
+            }} variant="h6" id="tableTitle">
               {titles}
-              <span><Button variant='outlined' sx={{marginRight:110,
+            </Typography>
+            <Button
+              onClick={()=>{
+                setOpen(true)
+              }}
+              variant='outlined' sx={{
+        
     width:150,
     height:50,
     fontSize:25,
@@ -35,10 +60,8 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     background:'#F0F0F',
 
 
-              }}>افزودن</Button></span>
-
-            </Typography>
-        </Grid>
+              }}>افزودن</Button>
+            </Box>
         
       </Toolbar>
 
@@ -97,6 +120,39 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
       </Table>
     </Paper>
+    <Dialog
+          width='xl'
+          open={open}
+          onClose={handleClose}
+          PaperProps={{
+            component: 'form',
+            onSubmit: (e) => {
+              e.preventDefault()
+              }   
+          }}
+      >
+
+          <DialogTitle>
+          افزودن  {titles}  
+          </DialogTitle>
+          <Divider  variant="middle" sx={{ bgcolor: "black" }} />
+          
+          <DialogContent>
+
+        <TextField   sx={{width:300}} label={titles} id="outlined-size-normal" defaultValue="" />
+      
+      <div sx={{
+              marginTop:2
+            }}>
+        <TextField required margin='2' sx={{width :300,marginTop:2,marginLeft:2}} label="از کد" id="outlined-size-normal" defaultValue="" />
+        <TextField required sx={{width :300,marginTop:2,marginLeft:2}} label="تا کد" id="outlined-size-normal" defaultValue="" />
+        </div>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>انصراف</Button>
+            <Button type="submit">تایید</Button>
+          </DialogActions>
+      </Dialog>
     </>
     
   );
